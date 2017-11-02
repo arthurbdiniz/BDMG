@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">BDMG</string>
+
+
+    <!--LOGIN-->
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Senha</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_link_to_register">Não é um Cliente? Registre-se agora no BDMG!</string>
+    <string name="btn_forgot_password">Esqueceu sua senha?</string>
+    <string name="inputEmail">Insira o seu email!</string>
+    <string name="inputPassword">Insira a sua senha!</string>
+    <string name="minimum_password">Senha muito curta, minímo 6 caráteres!</string>
+    <string name="maximum_password">Senha muito longa, máximo 16 caráteres!</string>
+    <string name="auth_failed">Falha na autenticação, cheque o email e a senha ou cadastre-se.</string>
+
+    <!--Signup-->
+
+    <string name="action_sign_in_short">Cadastre-se</string>
+    <string name="btn_link_to_login">Já Cadastrado. Faça o Login!</string>
+    <string name="auth_failed_signup">Usuário logado com sucesso!</string>
+
+    <!--ResetPassword-->
+
+    <string name="lbl_forgot_password">Esqueceu sua senha?</string>
+    <string name="title_activity_reset_password">ResetPasswordActivity</string>
+    <string name="forgot_password_msg">Precisamos apenas da sua identificação de email registrada para enviá-lo instruções de redefinição de senha.</string>
+    <string name="btn_reset_password">Trocar Senha</string>
+    <string name="btn_back"><![CDATA[<< Voltar]]></string>
+    <string name="registered_email">Insira sua identificação de email registrada.</string>
+    <string name="send_instructions">Enviamos instruções no seu email para você redefinir sua senha!</string>
+    <string name="send_failed">Falha ao enviar email para redefinição de senha.</string>
+
+    <!--MAIN-->
+    <!--ChangeEmail-->
+
+    <string name="change_email">Trocar Email</string>
+    <string name="enter_email">Insira o seu novo email!</string>
+    <string name="hint_new_email">Novo Email</string>
+    <string name="btn_change">Trocar</string>
+    <string name="failed_email">Falha ao atualizar o email!</string>
+    <string name="update_email">O endereço de email está atualizado. Por favor, entre com a nova identificação de email!</string>
+
+    <!--ChangePassword-->
+
+    <string name="new_pass">Nova Senha</string>
+    <string name="hint_new_password">Nova Senha</string>
+    <string name="update_password">A senha está atualizado. Por favor, entre com a nova senha!</string>
+    <string name="failed_password">Falha ao atualizar a senha!</string>
+    <string name="change_password">Trocar Senha</string>
+
+
+    <!--SendPasswordReset-->
+
+    <string name="email">Email</string>
+    <string name="btn_send">Enviar</string>
+    <string name="reset_passaword">Senha redefinida foi enviada para o seu email!</string>
+    <string name="send_password_reset_email">Enviar senha para troca de email</string>
+    <string name="failed_send">Falha ao redefinir o email!</string>
+
+    <!--RemoveUser-->
+
+    <string name="remove_user">Deletar conta</string>
+    <string name="btn_remove">Remover</string>
+    <string name="profile_delect">Sua conta foi deletada :( Crie uma conta agora!</string>
+    <string name="failed_profile_delect">Falha ao deletar sua conta!</string>
+
+    <!--SignOut-->
+
+    <string name="btn_sign_out">Sair</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <!--Option menu-->
+
+    <string name="action_settings">Opções</string>
+    <string name="action_account">Minha Conta</string>
+    <string name="action_logout">Sair</string>
+</resources>

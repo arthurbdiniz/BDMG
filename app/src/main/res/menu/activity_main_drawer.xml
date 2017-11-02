@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_add_client_black_24dp"
+            android:title="Novo Cliente" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_clients_black_24dp"
+            android:title="Clientes" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_money_black_24dp"
+            android:title="Financiamento" />
+        <item
+            android:id="@+id/nav_dimend"
+            android:icon="@drawable/ic_dimend_black_24dp"
+            android:title="Dimensionamento" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Configuração" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartilhar" />
+            <item
+                android:id="@+id/nav_info"
+                android:icon="@drawable/ic_info_black_24dp"
+                android:title="Info" />
+
+            <item
+                android:id="@+id/nav_exit"
+                android:icon="@drawable/ic_exit_black_24dp"
+                android:title="Sair" />
+
+
+            <item
+                android:id="@+id/nav_terms_of_use"
+                android:title="Termos de Uso" />
+
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:title="Politica de Privacidade" />
+        </menu>
+    </item>
+
+</menu>

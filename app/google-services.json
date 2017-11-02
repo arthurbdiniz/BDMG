@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "127916119956",
+    "firebase_url": "https://bdmg-cacef.firebaseio.com",
+    "project_id": "bdmg-cacef",
+    "storage_bucket": "bdmg-cacef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127916119956:android:2c025559bfe31424",
+        "android_client_info": {
+          "package_name": "com.bdmg.bdmg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127916119956-ieid1d8tlqhjgicf4vshhp9rcrid2cfc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bdmg.bdmg",
+            "certificate_hash": "01fccbb1c774765ea59db99204e0f00cc0c1fd57"
+          }
+        },
+        {
+          "client_id": "127916119956-idqev1701ncsceufias2uslv6uq12303.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaNeVYIrs9gJAO1dNUsxm34ITi0Spy8Bc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127916119956-idqev1701ncsceufias2uslv6uq12303.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
