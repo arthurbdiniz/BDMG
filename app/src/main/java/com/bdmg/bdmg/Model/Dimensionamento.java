@@ -1,43 +1,46 @@
 package com.bdmg.bdmg.Model;
 
+
 import android.util.Log;
 
-public class Dimensionamento {
+import java.io.Serializable;
 
-    private String TAG = "Dimensionamento";
+public class Dimensionamento implements Serializable {
 
-    private double Tarifa = 0.73;
-    private int ProdutividadeBruta = 1450;
-    private int TaxaDisponibilidade = 100;
-    private int ProdutividadeLiquidaAno = 1407;
-    private int ProdutividadeLiquidaMes = 117;
-    private int Perdas = 3;
-    private int Custo = 0; //Reais por KW
-    private double ContaFixa = 73.0;
-    private int DiferencaPorcentagem = 18;
-    private int TaxaAno = 21;
+    public String TAG = "Dimensionamento";
 
-    private double ConsumoEstimado = 0; //ok
-    private double TotalCompensado = 0; //ok
-    private double CapacidadeSistema = 0; //ok
-    private double InvestimentoTotal = 0; //ok
-    private double CustoTotal = 0; //ok
-    private double Entrada = 0; //ok
-    private double ValorFinaciado = 0; //ok
-    private double ParcelaFinanciamento = 0; //TODO
-    private double DesembolsoMensal = 0; //ok
-    private double Diferenca = 0; //ok
+    public double Tarifa = 0.73;
+    public int ProdutividadeBruta = 1450;
+    public int TaxaDisponibilidade = 100;
+    public int ProdutividadeLiquidaAno = 1407;
+    public int ProdutividadeLiquidaMes = 117;
+    public int Perdas = 3;
+    public int Custo = 0; //Reais por KW
+    public double ContaFixa = 73.0;
+    public int DiferencaPorcentagem = 18;
+    public int TaxaAno = 21;
+
+    public double ConsumoEstimado = 0; //ok
+    public double TotalCompensado = 0; //ok
+    public double CapacidadeSistema = 0; //ok
+    public double InvestimentoTotal = 0; //ok
+    public double CustoTotal = 0; //ok
+    public double Entrada = 0; //ok
+    public double ValorFinaciado = 0; //ok
+    public double ParcelaFinanciamento = 0;
+    public double DesembolsoMensal = 0;
+    public double Diferenca = 0; //ok
 
     //Input
-    private int Prazo = 0;
-    private double ContaEnergia = 0;
-    private double TaxaMes = 1.6;
+    public int Prazo = 0;
+    public double ContaEnergia = 0;
+    public double TaxaMes = 1.6;
 
 
-    public Dimensionamento(float contaEnergia, int Prazo) {
+    public Dimensionamento(double contaEnergia, int Prazo) {
         this.ContaEnergia = contaEnergia;
         this.Prazo = Prazo;
-        this.TaxaMes = TaxaMes;
+
 
         calculaConsumoEstimado();
         calculaTotalCompensado();
