@@ -278,4 +278,6 @@ public class MainActivity extends AppCompatActivity
 //        appBarLayout.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2));
 //        floatingButton.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
     }
+
+
 }
