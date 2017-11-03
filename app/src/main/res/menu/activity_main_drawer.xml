@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_new_client"
             android:icon="@drawable/ic_add_client_black_24dp"
             android:title="Novo Cliente" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_clients"
             android:icon="@drawable/ic_clients_black_24dp"
             android:title="Clientes" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_financing"
             android:icon="@drawable/ic_money_black_24dp"
             android:title="Financiamento" />
         <item
-            android:id="@+id/nav_dimend"
+            android:id="@+id/nav_sizing"
             android:icon="@drawable/ic_dimend_black_24dp"
             android:title="Dimensionamento" />
         <item
