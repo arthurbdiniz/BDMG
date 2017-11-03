@@ -89,4 +89,21 @@
     <string name="client_cpf">CPF</string>
 
 
+    <string name="financiamento1">Como funciona o financiamento?</string>
+
+    <string name="financiamento2">O financiamento é ideal para que o seu cliente pague o valor total para instalção do seu projeto na MPE.
+    Você terá o contato normal com o seu cliente e poderá realizar todo orçamento via aplicativo BDMG SUSTENTÁVEL.</string>
+
+    <string name="financiamento3">O aplicativo vai detalhar para você e seu cliente os custos de quantidade de placas necessárias, valor de
+    instalação, valor de entrada, perspectiva de retorno de investimento, quantidade e valor das parcelas, dentre outras informações.</string>
+
+    <string name="financiamento4">Após esclarecimento com seu cliente você aprova o orçamento no aplicativo e o banco recebe a proposta, avalia
+    o crédito do seu cliente,e envia a resposta se o planejamento é viável ou não.</string>
+
+    <string name="financiamento5">Sendo aprovado, seu cliente encaminha para o banco toda a documentação, que será analisada e se estiver confirmado
+    o crédito pagará ao banco a entrada e o banco te paga o valor integral para implatação do projeto na MPE do cliente.</string>
+
+    <string name="financiamento6">Agora seu cliente tem contato apenas com o banco e seu trabalho já foi executado.</string>
+
+
 </resources>

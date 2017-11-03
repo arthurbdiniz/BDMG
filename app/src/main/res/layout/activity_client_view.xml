@@ -474,11 +474,6 @@
                 android:background="@color/RedCup"
                 android:textColor="@color/white"/>
 
-
-
-
-
-
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:layout_width="50dp"

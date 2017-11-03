@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -23,6 +25,8 @@ public class ClientViewActivity extends AppCompatActivity {
 
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
+
+    private DatabaseReference clientObj;
 
     //Cliente
     private TextView clientName;
@@ -44,7 +48,7 @@ public class ClientViewActivity extends AppCompatActivity {
     private int numeroParcel = 0;
 
 
-
+    private Button buttonDeleteClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,11 +62,17 @@ public class ClientViewActivity extends AppCompatActivity {
         client = (Cliente) intent.getSerializableExtra("Client");
         initViews();
 
-
         mFirebaseDatabase = FirebaseDatabase.getInstance().getReference().child("clients");
-        DatabaseReference clientObj = FirebaseDatabase.getInstance().getReference().child("clients").child(client.clienteId);
+        clientObj = FirebaseDatabase.getInstance().getReference().child("clients").child(client.clienteId);
 
+        buttonDeleteClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //finish();
+                //deleteTicket();
 
+            }
+        });
 
         clientObj.addValueEventListener(new ValueEventListener() {
             @Override
@@ -82,17 +92,12 @@ public class ClientViewActivity extends AppCompatActivity {
                 custoTotal.setText(snapshot.child("dimensionamento").child("CustoTotal").getValue().toString());
                 taxaJuros.setText(snapshot.child("dimensionamento").child("TaxaMes").getValue().toString());
                 numeroParcelas.setText(snapshot.child("dimensionamento").child("Prazo").getValue().toString());
-
                 numeroParcel = Integer.parseInt(snapshot.child("dimensionamento").child("Prazo").getValue().toString());
-
-
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-
-
 
         graph = (GraphView) findViewById(R.id.graph);
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
@@ -129,12 +134,16 @@ public class ClientViewActivity extends AppCompatActivity {
 
         parcelaFinanciamento = (TextView) findViewById(R.id.parcela_financiamento);
         entrada = (TextView) findViewById(R.id.entrada);
-        valorFinanciado = (TextView) findViewById(R.id.valor_financiamento);;
-        custoTotal = (TextView) findViewById(R.id.custo_total);;
-        taxaJuros = (TextView) findViewById(R.id.taxa_juros);;
-        numeroParcelas = (TextView) findViewById(R.id.numero_parcelas);;
+        valorFinanciado = (TextView) findViewById(R.id.valor_financiamento);
+        custoTotal = (TextView) findViewById(R.id.custo_total);
+        taxaJuros = (TextView) findViewById(R.id.taxa_juros);
+        numeroParcelas = (TextView) findViewById(R.id.numero_parcelas);
 
+        buttonDeleteClient = (Button) findViewById(R.id.delete_client_btn);
 
+    }
 
+    public void deleteTicket(){
+        clientObj.removeValue();
     }
 }
