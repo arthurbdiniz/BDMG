@@ -13,7 +13,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+
 
         android:orientation="vertical"
         android:background="#FFFFFF">
@@ -24,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:text="Client Name"
             android:ellipsize="end"
@@ -36,7 +37,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp">
+            android:layout_marginLeft="20dp">
 
 
             <TextView
@@ -45,10 +46,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:text="client email"
-                android:textAppearance="?android:attr/textAppearanceButton"
-                android:textColor="@color/RedCup"
-                android:textSize="20dp"
+                android:text="email"
+                android:textColor="@color/Cinza"
+                android:textSize="15dp"
                 />
 
         </LinearLayout>
@@ -56,10 +56,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="25dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp">
 
+            <TextView
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/client_telephone_ddd"
+
+                android:layout_marginTop="0dp"
+                android:text="Telefone: "
+                android:maxLines="1"
+                android:maxLength="35"
+                android:textSize="20dp"
+                android:ellipsize="end"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/Cinza" />
 
             <TextView
                 android:id="@+id/client_ddd"
@@ -69,12 +82,15 @@
                 android:layout_marginLeft="1dp"
                 android:layout_marginTop="0dp"
                 android:text="ddd"
+                android:layout_marginRight="7dp"
+                android:textSize="20dp"
                 android:maxLines="1"
                 android:maxLength="35"
                 android:ellipsize="end"
                 android:layout_gravity="center_vertical"
                 android:textColor="@android:color/black" />
             <TextView
+                android:textSize="20dp"
                 android:id="@+id/client_telephone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,6 +105,25 @@
                 android:textColor="@android:color/black" />
 
         </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_gravity="end"
+                android:padding="10dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/client_date_creation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="date"
+                android:textAppearance="?android:attr/textAppearanceButton"
+                android:textColor="@color/RedCup"
+                android:textSize="15dp"
+                />
+
+
 
     </LinearLayout>
     

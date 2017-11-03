@@ -1,9 +1,12 @@
 package com.bdmg.bdmg;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -46,6 +49,7 @@ public class MainActivity extends AppCompatActivity
     private ClientAdapter adapter;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
+    private AppBarLayout appBarLayout;
 
     private FloatingActionButton floatingButton;
 
@@ -78,6 +82,7 @@ public class MainActivity extends AppCompatActivity
 
         initRecyclerView();
         initFloatingButton();
+        initAppBarLayout();
 
         setTitle("Clientes");
 
@@ -106,12 +111,9 @@ public class MainActivity extends AppCompatActivity
                                                     clientData.child("email").getValue().toString(),
                                                     clientData.child("ddd").getValue().toString(),
                                                     clientData.child("telephone").getValue().toString(),
-                                                    clientData.child("integratorId").getValue().toString());
+                                                    clientData.child("integratorId").getValue().toString(),
+                                                    clientData.child("dateCreation").getValue().toString());
 
-
-
-                    //ticket.setTicketId(player.getKey());
-                    Log.d("1", "1");
                     clients.add(client);
                     final FirebaseUser integrator = FirebaseAuth.getInstance().getCurrentUser();
                     if(client.integratorId.equals(integrator.getUid())){
@@ -120,7 +122,7 @@ public class MainActivity extends AppCompatActivity
 
                 }
 
-                adapter = new ClientAdapter(clients ,getApplicationContext(), recyclerView);
+                adapter = new ClientAdapter(userClients ,getApplicationContext(), recyclerView);
 
                 recyclerView.setAdapter(adapter);
                 RecyclerView.LayoutManager layout = new LinearLayoutManager(getApplicationContext(),
@@ -178,11 +180,22 @@ public class MainActivity extends AppCompatActivity
             startActivity(new  Intent(getApplicationContext(), NewClientActivity.class));
         } else if (id == R.id.nav_clients) {
 
+
+        }else if (id == R.id.nav_sizing) {
+            startActivity(new  Intent(getApplicationContext(), SizingActivity.class));
+
         } else if (id == R.id.nav_financing) {
-
+            startActivity(new  Intent(getApplicationContext(), FinancingActivity.class));
         } else if (id == R.id.nav_manage) {
-
+            startActivity(new  Intent(getApplicationContext(), ConfigActivity.class));
         } else if (id == R.id.nav_share) {
+            actionShare();
+
+        } else if(id == R.id.nav_avaliate) {
+            actionOpenGooglePLay();
+
+        }else if (id == R.id.nav_info) {
+            startActivity(new  Intent(getApplicationContext(), InfoActivity.class));
 
         } else if (id == R.id.nav_exit) {
             mAuth.signOut();
@@ -209,29 +222,58 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    private void initRecyclerView(){
-        recyclerView = (RecyclerView) findViewById(R.id.recycler);
-//        recyclerView.setOnScrollListener(new HidingScrollListener() {
-//            @Override
-//            public void onHide() {
-//                hideViews();
-//            }
-//            @Override
-//            public void onShow() {
-//                showViews();
-//            }
-//        });
+    private void initAppBarLayout(){
+        appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
     }
 
-//    private void hideViews() {
+    public void actionOpenGooglePLay(){
+
+        final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+        }
+
+    }
+
+    public void actionShare(){
+        try {
+            Intent i = new Intent(Intent.ACTION_SEND);
+            i.setType("text/plain");
+            i.putExtra(Intent.EXTRA_SUBJECT, "RedCup");
+            String sAux = "\nDeixa eu te recomendar este aplicatico\n\n";
+            sAux = sAux + "https://play.google.com/store/apps/details?id=com.arthur.redcup \n\n";
+            i.putExtra(Intent.EXTRA_TEXT, sAux);
+            startActivity(Intent.createChooser(i, "choose one"));
+        } catch(Exception e) {
+
+        }
+    }
+
+    private void initRecyclerView(){
+        recyclerView = (RecyclerView) findViewById(R.id.recycler);
+        recyclerView.setOnScrollListener(new HidingScrollListener() {
+            @Override
+            public void onHide() {
+                hideViews();
+            }
+            @Override
+            public void onShow() {
+                showViews();
+            }
+        });
+    }
+
+    private void hideViews() {
 //        appBarLayout.animate().translationY(-appBarLayout.getHeight()).setInterpolator(new AccelerateInterpolator(2));
-//        FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) createTicketFloatingButton.getLayoutParams();
+//        FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) floatingButton.getLayoutParams();
 //        int fabBottomMargin = lp.bottomMargin;
-//        createTicketFloatingButton.animate().translationY(createTicketFloatingButton.getHeight()+fabBottomMargin).setInterpolator(new AccelerateInterpolator(2)).start();
-//    }
-//
-//    private void showViews() {
+//        floatingButton.animate().translationY(floatingButton.getHeight()+fabBottomMargin).setInterpolator(new AccelerateInterpolator(2)).start();
+    }
+
+    private void showViews() {
 //        appBarLayout.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2));
-//        createTicketFloatingButton.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
-//    }
+//        floatingButton.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
+    }
 }

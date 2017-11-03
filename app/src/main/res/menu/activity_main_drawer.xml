@@ -30,6 +30,7 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Compartilhar" />
+
             <item
                 android:id="@+id/nav_info"
                 android:icon="@drawable/ic_info_black_24dp"
@@ -40,14 +41,17 @@
                 android:icon="@drawable/ic_exit_black_24dp"
                 android:title="Sair" />
 
+            <item
+                android:id="@+id/nav_avaliate"
+                android:title="Avaliar na Google Play" />
 
             <item
                 android:id="@+id/nav_terms_of_use"
-                android:title="Termos de Uso" />
+                android:title="Termos de Uso [Breve]" />
 
             <item
                 android:id="@+id/nav_privacy_policy"
-                android:title="Politica de Privacidade" />
+                android:title="Politica de Privacidade [Breve]" />
         </menu>
     </item>
 

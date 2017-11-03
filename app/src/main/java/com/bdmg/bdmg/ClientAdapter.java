@@ -61,6 +61,7 @@ public class ClientAdapter extends RecyclerView.Adapter implements View.OnClickL
         ticketViewHolder.email.setText(client.getEmail());
         ticketViewHolder.ddd.setText(client.getDdd());
         ticketViewHolder.telephone.setText(client.getTelephone());
+        ticketViewHolder.dateCreation.setText(client.getDateCreation());
 
     }
 
@@ -79,7 +80,7 @@ public class ClientAdapter extends RecyclerView.Adapter implements View.OnClickL
         int itemPosition = recyclerView.getChildLayoutPosition(v);
         Cliente cliente = filteredTickets.get(itemPosition);
 
-        Intent goTicket = new Intent(context, ClientActivity.class);
+        Intent goTicket = new Intent(context, ClientViewActivity.class);
         goTicket.putExtra("Client", cliente);
         goTicket.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(goTicket);

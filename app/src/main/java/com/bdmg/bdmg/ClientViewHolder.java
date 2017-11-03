@@ -12,6 +12,7 @@ public class ClientViewHolder extends RecyclerView.ViewHolder implements View.On
     final TextView email;
     final TextView ddd;
     final TextView telephone;
+    final TextView dateCreation;
 
 
     public ClientViewHolder(View view) {
@@ -21,6 +22,7 @@ public class ClientViewHolder extends RecyclerView.ViewHolder implements View.On
         email = (TextView) view.findViewById(R.id.client_email);
         ddd = (TextView) view.findViewById(R.id.client_ddd);
         telephone = (TextView) view.findViewById(R.id.client_telephone);
+        dateCreation = (TextView) view.findViewById(R.id.client_date_creation);
     }
     @Override
     public void onClick(View view) {

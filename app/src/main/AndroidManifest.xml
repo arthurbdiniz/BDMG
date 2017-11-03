@@ -37,7 +37,12 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".RobotActivity" />
-        <activity android:name=".ClientActivity"></activity>
+        <activity android:name=".ClientActivity" />
+        <activity android:name=".FinancingActivity" />
+        <activity android:name=".SizingActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".ClientViewActivity" />
+        <activity android:name=".ConfigActivity"></activity>
     </application>
 
 </manifest>

@@ -5,14 +5,27 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.bdmg.bdmg.Model.Building;
 import com.bdmg.bdmg.Model.Cliente;
 import com.bdmg.bdmg.Model.Dimensionamento;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
+import com.google.android.gms.location.places.ui.PlaceSelectionListener;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -21,8 +34,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
+import static android.view.View.VISIBLE;
+
 public class NewClientActivity extends AppCompatActivity {
 
+    private static final String TAG = "New Client" ;
     private EditText clientName;
     private EditText clientCpf;
     private EditText clientEmail;
@@ -36,6 +56,8 @@ public class NewClientActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseInstance;
 
     private String ticketId;
+
+    Building placeObj = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +85,31 @@ public class NewClientActivity extends AppCompatActivity {
 
         initFirebase();
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
+                getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
 
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: obter informações sobre o local selecionado.
+                Log.i(TAG, "Building: " + place.getName());
+                placeObj = new Building(place.getName(), place.getAddress(), place.getLatLng());
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Solucionar o erro.
+                Log.i(TAG, "Ocorreu um erro: " + status);
+            }
+        });
 
     }
+
+
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -84,13 +127,29 @@ public class NewClientActivity extends AppCompatActivity {
                 Dimensionamento dimensionamento = new Dimensionamento(Double.parseDouble(clientBill.getText().toString()) , Integer.parseInt(clientDeadline.getText().toString()));
                 final FirebaseUser integrator = FirebaseAuth.getInstance().getCurrentUser();
 
+                //Date Creates
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy  HH:mm");
+                SimpleDateFormat dateFormat_hora = new SimpleDateFormat("HH:mm:ss");
+                Date data = new Date();
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(data);
+
+                Date data_atual = cal.getTime();
+                String dateCreation = dateFormat.format(data_atual);
+                String hora_atual = dateFormat_hora.format(data_atual);
+
+                //String yearStr = String.valueOf((year));
+
+
                 Cliente client = new Cliente(clientName.getText().toString(),
                                                 clientCpf.getText().toString(),
                                                 clientEmail.getText().toString(),
                                                 clientDDD.getText().toString(),
                                                 clientTelephone.getText().toString(),
                                                 integrator.getUid(),
-                                                dimensionamento
+                                                dateCreation,
+                                                dimensionamento,
+                                                placeObj
                                                 );
 
                 if (TextUtils.isEmpty(ticketId)) {

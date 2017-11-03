@@ -1,6 +1,8 @@
 package com.bdmg.bdmg.Model;
 
 
+import android.os.Build;
+
 import java.io.Serializable;
 
 public class Cliente implements Serializable {
@@ -11,32 +13,45 @@ public class Cliente implements Serializable {
     public String ddd;
     public String telephone;
     public String integratorId;
+    public String dateCreation;
+
 
 
     public Dimensionamento dimensionamento = null;
+    public Building building = null;
 
 
-    public Cliente(String nome, String cpf, String email, String ddd, String telephone, String integratorId, Dimensionamento dimensionamento) {
+    public Cliente(String nome, String cpf, String email, String ddd, String telephone, String integratorId,
+                   String dateCreation,
+                   Dimensionamento dimensionamento,
+                   Building building) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
         this.ddd = ddd;
         this.telephone = telephone;
         this.integratorId = integratorId;
+        this.dateCreation = dateCreation;
         this.dimensionamento = dimensionamento;
+        this.building = building;
 
     }
 
-    public Cliente(String nome, String email, String ddd, String telephone, String integratorId) {
+    public Cliente(String nome, String email, String ddd, String telephone, String integratorId, String dateCreation) {
         this.nome = nome;
         this.email = email;
         this.ddd = ddd;
         this.telephone = telephone;
         this.integratorId = integratorId;
+        this.dateCreation = dateCreation;
     }
 
     public String getNome() {
         return nome;
+    }
+
+    public String getDateCreation() {
+        return dateCreation;
     }
 
     public String getCpf() {
