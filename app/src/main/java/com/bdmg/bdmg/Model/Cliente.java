@@ -13,6 +13,7 @@ public class Cliente implements Serializable {
     public String ddd;
     public String telephone;
     public String integratorId;
+    public String clienteId;
     public String dateCreation;
 
 
@@ -21,7 +22,7 @@ public class Cliente implements Serializable {
     public Building building = null;
 
 
-    public Cliente(String nome, String cpf, String email, String ddd, String telephone, String integratorId,
+    public Cliente(String nome, String cpf, String email, String ddd, String telephone,String clienteId, String integratorId,
                    String dateCreation,
                    Dimensionamento dimensionamento,
                    Building building) {
@@ -34,17 +35,33 @@ public class Cliente implements Serializable {
         this.dateCreation = dateCreation;
         this.dimensionamento = dimensionamento;
         this.building = building;
+        this.clienteId = clienteId;
 
     }
 
-    public Cliente(String nome, String email, String ddd, String telephone, String integratorId, String dateCreation) {
+    public Cliente(String nome, String email, String ddd, String telephone, String clienteId, String integratorId, String dateCreation) {
         this.nome = nome;
         this.email = email;
         this.ddd = ddd;
         this.telephone = telephone;
         this.integratorId = integratorId;
         this.dateCreation = dateCreation;
+        this.clienteId = clienteId;
     }
+
+
+
+    public Cliente(String nome, String email, String ddd, String telephone, String clienteId, String integratorId, String dateCreation, Dimensionamento dimensionamento) {
+        this.nome = nome;
+        this.email = email;
+        this.ddd = ddd;
+        this.telephone = telephone;
+        this.integratorId = integratorId;
+        this.dateCreation = dateCreation;
+        this.clienteId = clienteId;
+        this.dimensionamento =dimensionamento;
+    }
+
 
     public String getNome() {
         return nome;

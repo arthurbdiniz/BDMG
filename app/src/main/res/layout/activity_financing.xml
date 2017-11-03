@@ -6,4 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.bdmg.bdmg.FinancingActivity">
 
+
+
+
 </android.support.constraint.ConstraintLayout>

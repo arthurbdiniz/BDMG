@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                     //}
 
 
-                    Toast.makeText(LoginActivity.this, "Usuário logado com sucesso, seja Bem-Vindo ao BDMG!" ,Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Seja Bem-Vindo ao BDMG Sustentável!" ,Toast.LENGTH_LONG).show();
 
                     //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (user != null) {

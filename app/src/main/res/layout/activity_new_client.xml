@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context="com.bdmg.bdmg.NewClientActivity"
-    android:background="#ffbd19">
+    android:background="#d6d6d6">
 
     <ScrollView
         android:layout_width="match_parent"

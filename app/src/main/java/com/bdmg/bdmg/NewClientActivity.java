@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -43,6 +44,7 @@ import static android.view.View.VISIBLE;
 public class NewClientActivity extends AppCompatActivity {
 
     private static final String TAG = "New Client" ;
+
     private EditText clientName;
     private EditText clientCpf;
     private EditText clientEmail;
@@ -55,7 +57,7 @@ public class NewClientActivity extends AppCompatActivity {
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
 
-    private String ticketId;
+    private String clientId;
 
     Building placeObj = null;
 
@@ -75,15 +77,11 @@ public class NewClientActivity extends AppCompatActivity {
         clientBill = (EditText) findViewById(R.id.client_bill);
         clientDeadline = (EditText) findViewById(R.id.client_deadline);
 
-        clientName.setText("arthur");
-        clientCpf.setText("123123");
-        clientEmail.setText("arthur@gmail.com");
-        clientDDD.setText("132");
-        clientTelephone.setText("123132");
-        clientBill.setText("1233");
-        clientDeadline.setText("12");
+
 
         initFirebase();
+
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -108,6 +106,11 @@ public class NewClientActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 
 
 
@@ -141,21 +144,22 @@ public class NewClientActivity extends AppCompatActivity {
                 //String yearStr = String.valueOf((year));
 
 
+                if (TextUtils.isEmpty(clientId)) {
+                    clientId = mFirebaseDatabase.push().getKey();
+                }
                 Cliente client = new Cliente(clientName.getText().toString(),
                                                 clientCpf.getText().toString(),
                                                 clientEmail.getText().toString(),
                                                 clientDDD.getText().toString(),
                                                 clientTelephone.getText().toString(),
+                                                clientId,
                                                 integrator.getUid(),
                                                 dateCreation,
                                                 dimensionamento,
                                                 placeObj
                                                 );
 
-                if (TextUtils.isEmpty(ticketId)) {
-                    ticketId = mFirebaseDatabase.push().getKey();
-                }
-                mFirebaseDatabase.child(ticketId).setValue(client);
+                mFirebaseDatabase.child(clientId).setValue(client);
                 finish();
                 return true;
 

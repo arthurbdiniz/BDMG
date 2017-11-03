@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity
                                                     clientData.child("email").getValue().toString(),
                                                     clientData.child("ddd").getValue().toString(),
                                                     clientData.child("telephone").getValue().toString(),
+                                                    clientData.child("clienteId").getValue().toString(),
                                                     clientData.child("integratorId").getValue().toString(),
                                                     clientData.child("dateCreation").getValue().toString());
 
@@ -180,14 +181,15 @@ public class MainActivity extends AppCompatActivity
             startActivity(new  Intent(getApplicationContext(), NewClientActivity.class));
         } else if (id == R.id.nav_clients) {
 
-
         }else if (id == R.id.nav_sizing) {
             startActivity(new  Intent(getApplicationContext(), SizingActivity.class));
 
         } else if (id == R.id.nav_financing) {
             startActivity(new  Intent(getApplicationContext(), FinancingActivity.class));
+
         } else if (id == R.id.nav_manage) {
             startActivity(new  Intent(getApplicationContext(), ConfigActivity.class));
+
         } else if (id == R.id.nav_share) {
             actionShare();
 

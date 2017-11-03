@@ -26,7 +26,7 @@ public class Dimensionamento implements Serializable {
     public double InvestimentoTotal = 0; //ok
     public double CustoTotal = 0; //ok
     public double Entrada = 0; //ok
-    public double ValorFinaciado = 0; //ok
+    public double ValorFinanciado = 0; //ok
     public double ParcelaFinanciamento = 0;
     public double DesembolsoMensal = 0;
     public double Diferenca = 0; //ok
@@ -102,12 +102,12 @@ public class Dimensionamento implements Serializable {
     }
 
     private void calculaValorFinanciado() {
-        ValorFinaciado = CustoTotal - Entrada;
+        ValorFinanciado = CustoTotal - Entrada;
 
     }
 
     private void calculaParcelaFinanciamento() {
-        ParcelaFinanciamento = (ValorFinaciado * TaxaMes)/1-(1/Math.pow((1+TaxaMes),Prazo));
+        ParcelaFinanciamento = (ValorFinanciado * TaxaMes)/1-(1/Math.pow((1+TaxaMes),Prazo));
         ParcelaFinanciamento /= 60;
     }
 
@@ -128,7 +128,7 @@ public class Dimensionamento implements Serializable {
         Log.d(TAG, String.valueOf(InvestimentoTotal));
         Log.d(TAG, String.valueOf(CustoTotal));
         Log.d(TAG, String.valueOf(Entrada));
-        Log.d(TAG, String.valueOf(ValorFinaciado));
+        Log.d(TAG, String.valueOf(ValorFinanciado));
         Log.d(TAG, String.valueOf(DesembolsoMensal));
         Log.d(TAG, String.valueOf(Diferenca));
         Log.d(TAG, String.valueOf(ParcelaFinanciamento));

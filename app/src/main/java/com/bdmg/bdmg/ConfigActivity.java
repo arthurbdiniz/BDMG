@@ -63,6 +63,7 @@ public class ConfigActivity extends AppCompatActivity implements View.OnClickLis
 
     /**Init Toolbar method**/
     public void initToolbar(){
+        setTitle("Configurações");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
