@@ -2,6 +2,8 @@
     <string name="app_name">BDMG</string>
 
 
+    <string name="google_maps_key">AIzaSyA_447xaOSgTKMqkxD3F6xBTTP_82KtTtc</string>
+
     <!--LOGIN-->
 
     <string name="hint_email">Email</string>
@@ -76,8 +78,15 @@
 
 
     <!--Option menu-->
-
     <string name="action_settings">Opções</string>
     <string name="action_account">Minha Conta</string>
     <string name="action_logout">Sair</string>
+
+
+    <!--New Client-->
+    <string name="client_name">Nome</string>
+    <string name="client_email">E-mail</string>
+    <string name="client_cpf">CPF</string>
+
+
 </resources>

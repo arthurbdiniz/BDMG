@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
+
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                     //}
 
 
-                    Toast.makeText(LoginActivity.this, "Usuário logado com sucesso, seja Bem-Vindo ao BDMG!" ,Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Seja Bem-Vindo ao BDMG Sustentável!" ,Toast.LENGTH_LONG).show();
 
                     //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (user != null) {

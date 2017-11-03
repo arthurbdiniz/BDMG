@@ -3,19 +3,19 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_new_client"
             android:icon="@drawable/ic_add_client_black_24dp"
             android:title="Novo Cliente" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_clients"
             android:icon="@drawable/ic_clients_black_24dp"
             android:title="Clientes" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_financing"
             android:icon="@drawable/ic_money_black_24dp"
             android:title="Financiamento" />
         <item
-            android:id="@+id/nav_dimend"
+            android:id="@+id/nav_sizing"
             android:icon="@drawable/ic_dimend_black_24dp"
             android:title="Dimensionamento" />
         <item
@@ -30,6 +30,7 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Compartilhar" />
+
             <item
                 android:id="@+id/nav_info"
                 android:icon="@drawable/ic_info_black_24dp"
@@ -40,14 +41,17 @@
                 android:icon="@drawable/ic_exit_black_24dp"
                 android:title="Sair" />
 
+            <item
+                android:id="@+id/nav_avaliate"
+                android:title="Avaliar na Google Play" />
 
             <item
                 android:id="@+id/nav_terms_of_use"
-                android:title="Termos de Uso" />
+                android:title="Termos de Uso [Breve]" />
 
             <item
                 android:id="@+id/nav_privacy_policy"
-                android:title="Politica de Privacidade" />
+                android:title="Politica de Privacidade [Breve]" />
         </menu>
     </item>
 

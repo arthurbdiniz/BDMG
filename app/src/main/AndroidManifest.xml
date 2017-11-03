@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +27,22 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NewClientActivity"></activity>
+        <activity android:name=".NewClientActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity   android:name=".ClientActivity" />
+        <activity   android:name=".FinancingActivity" />
+        <activity   android:name=".SizingActivity" />
+        <activity   android:name=".InfoActivity" />
+        <activity android:name=".ClientViewActivity" />
+        <activity android:name=".ConfigActivity" />
+        <activity android:name=".RobotActivity"></activity>
     </application>
 
 </manifest>
